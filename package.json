@@ -5,7 +5,7 @@
   "author": "Creative Commons (https://creativecommons.org)",
   "scripts": {
     "lint": "eslint src/*.js src/**/*.js",
-    "test": "jest tests/sass.test.js",
+    "test": "jest",
     "build": "webpack --mode production",
     "watch": "webpack --mode production --watch --progress",
     "storybook": "start-storybook -s ./src/assets -p 8080",
@@ -13,10 +13,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
     "@storybook/addon-backgrounds": "^5.3.14",
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-storyshots": "^5.3.17",
     "@storybook/html": "^5.3.14",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "bulma": "^0.8.0",
     "copy-webpack-plugin": "^5.1.1",
@@ -54,5 +58,18 @@
   ],
   "license": "MIT",
   "repository": "github:creativecommons/vocabulary",
-  "main": "index.js"
+  "main": "index.js",
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "scss"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  }
 }
