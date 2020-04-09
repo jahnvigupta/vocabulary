@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { figmaConfig } from './helpers'
+
+<Meta title="Progress/Vertical Navigation" />
+
+# Vertical Navigation
+
+
+<Preview>
+  <Story name="Current State, First Question" parameters={{
+    design: figmaConfig("797%3A1378")
+  }}>{`
+      <div style="border: 2px solid #D8D8D8; width:610px; height:241px; position:absolute; padding-top:25px; padding-left:69px; background-color:#"> 
+       <span style="font-family: Source Sans Pro; font-style: normal; font-weight: bold; font-size: 20px" font-color:#000000;> Step 1 name </span>
+       <br>
+       <span style="font-family: Source Sans Pro; font-style: normal; font-weight: normal; font-size: 16px" font-color:#000000;> Step description, indications, etc </span>
+       <div style="padding-top:94px;">
+            <button class="button small" style="background-color:#D8D8D8;">Next Question</button>
+       </div>
+     </div>
+  `}</Story>
+</Preview>
+  
+
